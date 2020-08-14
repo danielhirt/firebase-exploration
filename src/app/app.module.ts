@@ -8,6 +8,10 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { UserProfileComponent } from './component/user-profile/user-profile.component';
 import { environment } from 'src/environments/environment';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
+import { MatPasswordStrengthModule } from '@angular-material-extensions/password-strength';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +21,10 @@ import { environment } from 'src/environments/environment';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
+    NgxAuthFirebaseUIModule.forRoot(environment.firebase),
+    MatPasswordStrengthModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireAnalyticsModule
